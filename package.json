@@ -1,0 +1,28 @@
+{
+  "name": "e-archiv-service",
+  "version": "1.0.0",
+  "description": "RESTfull api service for E-Archiv",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Graalex/e-archiv-service.git"
+  },
+  "author": "Grigorchuk Aleksandr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Graalex/e-archiv-service/issues"
+  },
+  "homepage": "https://github.com/Graalex/e-archiv-service#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "file-stream-rotator": "0.0.6",
+    "morgan": "^1.7.0",
+    "mssql": "^3.3.0",
+    "path": "^0.12.7"
+  }
+}
