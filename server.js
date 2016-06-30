@@ -8,6 +8,7 @@ const morgan = require('morgan');
 
 var conf = require('./config');
 var docs = require('./api/v1.0/routers/documents');
+var abonents = require('./api/v1.0/routers/abonents');
 
 var app = express();
 var logDir = __dirname + '/logs';
@@ -22,6 +23,7 @@ var logStream = rotator.getStream({
 
 app.use(morgan('combined', {stream: logStream}));
 app.use('/api/v1.0/documents', docs);
+app.use('/api/v1.0/abonents', abonents);
 
 var port = conf.server.listenPort || 9000;
 app.listen(port, () => {
