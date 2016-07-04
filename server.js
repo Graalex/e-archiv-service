@@ -5,6 +5,7 @@ const express = require('express');
 const rotator = require('file-stream-rotator');
 const fs = require('fs');
 const morgan = require('morgan');
+const cors = require('cors');
 
 var conf = require('./config');
 var docs = require('./api/v1.0/routers/documents');
@@ -21,9 +22,10 @@ var logStream = rotator.getStream({
 	verbose: false
 });
 
+app.use(cors());
 app.use(morgan('combined', {stream: logStream}));
-app.use('/api/v1.0/documents', docs);
 app.use('/api/v1.0/abonents', abonents);
+app.use('/api/v1.0/ls', docs);
 
 var port = conf.server.listenPort || 9000;
 app.listen(port, () => {

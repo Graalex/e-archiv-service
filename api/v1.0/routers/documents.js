@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 	res.send('TODO: Render page all documents.')
 });
 
-router.get('/ls/:id', (req, res) => {
+router.get('/:id/documents', (req, res) => {
 	var ls = req.params['id'];
 	if(!util.isNullOrUndefined(ls) && ls > 0) {
 		sql.connect(conf.db.archiv)
