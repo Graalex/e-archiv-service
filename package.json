@@ -17,8 +17,6 @@
   },
   "homepage": "https://github.com/Graalex/e-archiv-service#readme",
   "dependencies": {
-    "body-parser": "^1.15.2",
-    "cookie-parser": "^1.4.3",
     "cors": "^2.7.1",
     "express": "^4.14.0",
     "file-stream-rotator": "0.0.6",
