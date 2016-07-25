@@ -7,9 +7,10 @@ const fs = require('fs');
 const morgan = require('morgan');
 const cors = require('cors');
 
-var conf = require('./config');
-var docs = require('./api/v1.0/routers/documents');
-var abonents = require('./api/v1.0/routers/abonents');
+const conf = require('./config');
+const docs = require('./api/v1.0/routers/documents');
+const abonents = require('./api/v1.0/routers/abonents');
+const contract = require('./api/v1.0/routers/contract');
 
 var app = express();
 var logDir = __dirname + '/logs';
@@ -26,6 +27,7 @@ app.use(cors());
 app.use(morgan('combined', {stream: logStream}));
 app.use('/api/v1.0/abonents', abonents);
 app.use('/api/v1.0/ls', docs);
+app.use('/api/v1.0/contract', contract);
 
 var port = conf.server.listenPort || 9000;
 app.listen(port, () => {
