@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 	res.send('TODO: Render page all contracts.')
 });
 
-router.get('/:org/:code', (req, res) => {
+router.get('/:org/:code/documents', (req, res) => {
 	var org = req.params['org'];
 	var code = req.params['code'];
 
